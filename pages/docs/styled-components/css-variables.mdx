@@ -1,0 +1,71 @@
+<style>{`
+  .tip {
+    color: #666600;
+  }
+
+  .subFolder{
+    margin: 0 24px;
+  }
+
+  .title {
+    display: inline-block;
+    border-radius: 1em;
+    line-height: 12px;
+    font-weight: 700;
+    background: #E7FDD8;
+    color: #66BF3C;
+    padding: 0 12px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+`}</style>
+
+# CSS Variables in composed pattern for React Devs
+
+I always love to make use of modularization pattern in my development phases 🔥
+
+> Modular programming is the process of subdividing a computer program into separate sub-programs and then recombine it.
+
+## Why though?
+
+As a React developer, you might be thinking that you don't need variables in CSS. You have an entire JavaScript engine at your disposal!
+
+There are two reasons to switch to CSS variables in your React app:
+
+1. The ergonomics are nice.
+2. It unlocks possibility of reusability!
+
+## Quick Snippet
+
+import Callout from 'nextra-theme-docs/callout'
+
+<Callout emoji="📁 ">
+  <span class="title">Folder structure</span>
+  <br />
+  <div>
+    |-- variables
+    <div class="subFolder">
+      <span class="tip">|-- colors.js</span>
+    </div>
+    <div class="subFolder">
+      <span class="tip">|-- sizes.js</span>
+    </div>
+  </div>
+</Callout>
+
+Here's what CSS variables look like:
+
+```jsx
+import { createGlobalStyled } from 'styled-components'
+import colors from './variables/colors'
+import sizes from './variables/sizes'
+
+// holds global css variables
+export const GlobalStyles = createGlobalStyled`
+    html{
+        --font-weight: 600;
+        ${{ ...colors }}
+        ${{ ...sizes }}
+    }
+`
+```
