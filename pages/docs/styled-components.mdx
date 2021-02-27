@@ -1,5 +1,5 @@
 <style>{`
-  .tip {
+  .tip, .text-tag {
     color: #666600;
   }
 
@@ -105,14 +105,14 @@ I always love to make use of modularization pattern in my development phases ðŸ”
 
 > Modular programming is the process of subdividing a computer program into separate sub-programs and then recombine it.
 
-## Why though?
+### Why though?
 
 There are two reasons to switch to CSS variables in your React app:
 
 1. The ergonomics are nice.
 2. It unlocks possibility of reusability!
 
-## Quick Snippet
+### Quick Snippet
 
 import Callout from 'nextra-theme-docs/callout'
 
@@ -180,7 +180,7 @@ export const GlobalStyles = createGlobalStyled`
     target="_blank"
   >
     <img src="/jc.png" alt="comments" />
-    <span>
+    <span className="text-tag">
       <strong>Josh Comeau</strong>
       CSS Variables for React Devs
     </span>

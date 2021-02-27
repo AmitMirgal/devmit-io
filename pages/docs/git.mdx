@@ -1,0 +1,93 @@
+# Git Cheat Sheet
+
+<style>{`
+    .git-container{
+      display: flex;
+      justify-content: center;
+    }
+    
+.tip {
+    display: inline-block;
+    border-radius: 1em;
+    background: #E7FDD8;
+    color: #66BF3C;
+    padding: 4px 12px;
+    margin-right: 10px;
+  }
+
+  .title {
+    display: flex;
+    text-align: left;
+  }
+
+`}</style>
+
+<div className="git-container">![](/git.png)</div>
+<br />
+
+### Command Line Interface
+
+The following is a comprehensive reference of the git command.
+
+<br />
+import Callout from 'nextra-theme-docs/callout'
+
+<div className="tip-wrapper">
+  <div className="tip">git basics</div>
+</div>
+
+```jsx
+> git init [directory]
+> git clone [repo]
+> git config user.name [name], git config user.email [email]
+> git add [directory]
+> git commit -m "message-name"
+> git status
+> git log
+```
+
+| Command |                                                                                                                                                                                                Description |
+| :------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| init    |                   <Callout emoji="🐱"><span className="title">Create empty Git repo in specified directory. Run with no arguments to initialize the current directory as a git repository</span></Callout> |
+| clone   | <Callout emoji="🐱"><span className="title">Clone repo located at [repo] onto local machine. Original repo can be located on the local filesystem or on a remote machine via HTTP or SSH.</span></Callout> |
+| config  |        <Callout emoji="🐱"><span className="title">Define author name to be used for all commits in current repo. Devs commonly use --global flag to set config options for current user.</span></Callout> |
+| add     |                             <Callout emoji="🐱"><span className="title">Stage all changes in [directory] for the next commit.Replace [directory] with a [file] to change a specific file.</span></Callout> |
+| commit  |                                      <Callout emoji="🐱"><span className="title">Commit the staged snapshot, but instead of launching a text editor, use [message] as the commit message.</span></Callout> |
+| status  |                                                                                         <Callout emoji="🐱"><span className="title">List which files are staged, unstaged, and untracked.</span></Callout> |
+| log     |                                          <Callout emoji="🐱"><span className="title">Display the entire commit history using the default format.For customization see additional options.</span></Callout> |
+
+<br />
+<div className="tip-wrapper">
+  <div className="tip">git branch</div>
+</div>
+
+```jsx
+> git branch
+> git branch -a
+> git checkout -b [branch-name]
+> git merge [branch]
+```
+
+| Command   |                                                                                                                                                                Description |
+| :-------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| branch    | <Callout emoji="🐻"><span className="title">List all of the branches in your repo. Add a [branch] argument to create a new branch with the name [branch].</span></Callout> |
+| branch -a |                                    <Callout emoji="🐻"><span className="title">List all of the branches in your repo i.e. local and remote using -a flag.</span></Callout> |
+| checkout  |        <Callout emoji="🐻"><span className="title">Create and check out a new branch named [branch-name].Drop the -b flag to checkout an existing branch.</span></Callout> |
+| merge     |                                                                       <Callout emoji="🐻"><span className="title">Merge [branch] into the current branch.</span></Callout> |
+
+<br />
+<div className="tip-wrapper">
+  <div className="tip">git push</div>
+</div>
+
+```jsx
+> git push [remote-name] --force
+> git push -u [remote-name] [branch-name]
+```
+
+| Command |                                                                                                                                                                                                            Description |
+| :------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| push    | <Callout emoji="🐠"><span className="title">Forces the git push even if it results in a non-fast-forward merge. Do not use the --force flag unless you’re absolutely sure you know what you’re doing.</span></Callout> |
+| push -u |                                                                                              <Callout emoji="🐠"><span className="title">Pushes the code with referencing the local branch to remote.</span></Callout> |
+
+> Work in progress...
