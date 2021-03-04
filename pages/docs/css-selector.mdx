@@ -70,6 +70,10 @@ return (
   text-align: center;
 }
 
+.app .header {
+  color: orangered;
+}
+
 .app h1 {
   color: green;
 }
@@ -86,5 +90,30 @@ return (
   margin-top: 3px;
 }
 ```
+
+In the above example, the orange-red color for the h1 get applied because `.app .header` scores more value than the `.app h1`
+
+### CSS Selector reference
+
+| Selector          |                                                                   Description |
+| :---------------- | ----------------------------------------------------------------------------: |
+| .class            |                                       Selects all elements with class="intro" |
+| .class1.class2    | Selects all elements with both name1 and name2 set within its class attribute |
+| .class1 .class2   | Selects all elements with name2 that is a descendant of an element with name1 |
+| #id               |                                       Selects the element with id="firstname" |
+| element           |                                                        Selects all p elements |
+| element.class     |                                     Selects all p elements with class="intro" |
+| element,element   |                                   Selects all div elements and all p elements |
+| element element   |                                    Selects all p elements inside div elements |
+| element>element   |                      Selects all p elements where the parent is a div element |
+| element+element   |    Selects the first p element that are placed immediately after div elements |
+| element1~element2 |                     Selects every ul element that are preceded by a p element |
+
+### Calculating CSS Specificity Value
+
+- If the element has inline styling, that automatically1 wins (1,0,0,0 points)
+- For each ID value, apply 0,1,0,0 points
+- For each class value (or pseudo-class or attribute selector), apply 0,0,1,0 points
+- For each element reference, apply 0,0,0,1 point
 
 > Work in progress...
