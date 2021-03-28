@@ -3,5 +3,6 @@
   "css-selector": "CSS Selector",
   "git": "Git Cheat Sheet",
   "eslint-airbnb-setup": "Eslint Airbnb Setup",
-  "jest-enzyme-setup": "Jest enzyme Setup"
+  "jest-enzyme-setup": "Jest enzyme Setup",
+  "box-modal": "Box Modal"
 }
