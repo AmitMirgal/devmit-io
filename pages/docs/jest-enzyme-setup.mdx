@@ -1,0 +1,90 @@
+# jest-enzyme-setup
+
+## What is jest?
+
+Testing framework created by facebook.
+
+## What is enzyme
+
+Enzyme is a JavaScript Testing utility for React that makes it easier to test your React Components' output. You can also manipulate, traverse, and in some ways simulate runtime given the output.
+
+Enzyme's API is meant to be intuitive and flexible by mimicking jQuery's API for DOM manipulation and traversal.
+
+## Getting started
+
+If you are using React with 16 version then you need to install enzyme adapter to bind React with enzyme
+
+To get started with enzyme, you can simply install it via npm. You will need to install enzyme along with an Adapter corresponding to the version of react (or other UI Component library) you are using. For instance, if you are using enzyme with React 16, you can run:
+
+`npm i --save-dev enzyme enzyme-adapter-react-16`
+
+#### Add dependencies
+
+Add jest to your project. To do that, run;  
+`npm install jest`
+
+Add enzyme, run  
+`npm install enzyme`
+
+#### Create setupTests.js file at src directory and add the following code into it.
+
+```javascript
+import { configure } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+
+configure({ adapter: new Adapter() })
+```
+
+#### Sample test file using jest and enzyme
+
+Note - Testing PrimaryButton component
+
+```javascript
+import React from 'react'
+import { mount } from 'enzyme'
+
+import PrimaryButton from './PrimaryButton'
+import { emptyFunc, emptyString } from '../../../commons/utils/emptyLiterals'
+
+describe('<PrimaryButton/>', () => {
+  let wrapper
+  const defaultProps = {
+    className: emptyString,
+    label: 'Submit',
+    onClick: emptyFunc,
+    disabled: false,
+  }
+  const prepare = (props) => {
+    wrapper = mount(<PrimaryButton {...defaultProps} {...props} />)
+  }
+
+  it('button element exists', () => {
+    // when
+    prepare()
+
+    //then
+    expect(wrapper.find('button').exists()).toBe(true)
+  })
+
+  it('button is enabled', () => {
+    // when
+    prepare()
+
+    //then
+    expect(wrapper.find(PrimaryButton).props().disabled).toBe(false)
+  })
+
+  it('button is triggered', () => {
+    const props = {
+      onClick: jest.fn(),
+    }
+    // when
+    prepare(props)
+
+    wrapper.find(PrimaryButton).simulate('click')
+
+    //then
+    expect(props.onClick).toHaveBeenCalled()
+  })
+})
+```

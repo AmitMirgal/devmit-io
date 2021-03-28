@@ -1,0 +1,35 @@
+# eslint-airbnb-setup
+
+## What is Eslint?
+
+ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
+
+## What is eslint-config-airbnb
+
+This package provides Airbnb's .eslintrc as an extensible shared config.
+
+## Getting started
+
+#### Add dependencies
+
+Add eslint to your project. To do that, run;  
+`npm install --save-dev eslint`
+
+Add eslint-config-airbnb, run  
+`npm install --save-dev eslint-config-airbnb`
+
+Also to install the peer dependencies of airbnb, run;  
+`npx install-peerdeps --dev eslint-config-airbnb`
+
+#### Create .eslintrc file in the root directory
+
+`{ "extends": "airbnb" }`
+
+If you are using VSCode then install ESlint extension and you are ready to use the linter.
+
+Note - If you are not able to use the warning on the js file as you type,
+
+1. Go to - vs code settings
+2. search for work directories
+3. Once you find the settings.json add the following line into that file  
+   `"eslint.workingDirectories": [ { "mode": "auto" } ]`

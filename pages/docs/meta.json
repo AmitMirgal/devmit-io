@@ -1,5 +1,7 @@
 {
   "styled-components": "Styled Components",
   "css-selector": "CSS Selector",
-  "git": "Git Cheat Sheet"
+  "git": "Git Cheat Sheet",
+  "eslint-airbnb-setup": "Eslint Airbnb Setup",
+  "jest-enzyme-setup": "Jest enzyme Setup"
 }
